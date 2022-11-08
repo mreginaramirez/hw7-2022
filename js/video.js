@@ -47,7 +47,7 @@ function playFunc() {
 	var video = document.getElementById("player1");
 	console.log("Play Video");
 	video.play();
-	document.querySelector("#volume").innerHTML = (video.volume * 100);
+	document.querySelector("#volume").innerHTML = (video.volume * 100) + "%";
 }
 
 function pauseFunc() {
@@ -80,27 +80,33 @@ function volumeFunc() {
 	var video = document.getElementById("player1");
 	var slider = document.querySelector("#slider");
 	video.volume = slider.value / 100;
-	document.querySelector("#volume").innerHTML = (video.volume * 100);
+	document.querySelector("#volume").innerHTML = (video.volume * 100)+ "%";
 }
 
 function oldStyleFunc() {
 	console.log("Change to old style");
 
 	var video = document.getElementById("player1");
-	video.style.filter = "grayscale(100%)";
-	video.style.width = "75%";
-	video.style.border = "5px double grey";
-	video.style.borderRadius = "20px";
+	video.classList.add("oldSchool");
+
+	// var video = document.getElementById("player1");
+	// video.style.filter = "grayscale(100%)";
+	// video.style.width = "75%";
+	// video.style.border = "5px double grey";
+	// video.style.borderRadius = "20px";
 }
 
 function origStyleFunc() {
 	console.log("Change to original style");
 
 	var video = document.getElementById("player1");
-	video.style.filter = "none";
-	video.style.width = "90%";
-	video.style.border = "2px solid black";
-	video.style.borderRadius = "0px";
+	video.classList.remove("oldSchool");
+
+	// var video = document.getElementById("player1");
+	// video.style.filter = "none";
+	// video.style.width = "90%";
+	// video.style.border = "2px solid black";
+	// video.style.borderRadius = "0px";
 }
 
 function slowFunc() {
